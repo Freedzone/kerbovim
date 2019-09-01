@@ -1,6 +1,13 @@
 # kerbovim
 Kerboscript syntax for Vim. Maintained (so far).
 
+## Installation
+Depends on your plugin manager.
+For [vim-plug](https://github.com/junegunn/vim-plug) users:
+```vim
+Plug 'Freedzone/kerbovim'
+```
+
 ## Features
 Highlights:
 - booleans
@@ -28,10 +35,13 @@ Indent:
 
 ## Look
 [pic-kerb]: https://raw.githubusercontent.com/Freedzone/i/master/kerbovim/kerbovim.PNG
+[pic-kerbcoc]: https://raw.githubusercontent.com/Freedzone/i/master/kerbovim/kerbovim-coc.PNG
 ![Kerbovim demo][pic-kerb]
 
 ## IDE-Like Experience
 If you wish to enhance your experience with features like autocomplete, hover symbol highlight, signature help, refactoring, etc., I highly suggest to try out [kos-language-server](https://github.com/jonnyboyC/kos-language-server).
+
+![Kerbovim coc][pic-kerbcoc]
 
 To pair up KLS with Vim I used an intellisense engine - [coc.nvim](https://github.com/neoclide/coc.nvim).
 The configuration is rather simple. KLS should be available in PATH on your system. In your `coc-settings.json` put:
