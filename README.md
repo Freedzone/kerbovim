@@ -70,3 +70,5 @@ If you want to display diagnostic info through ALE, add this option:
         "displayByAle": true
     },
 ```
+
+For snippets, install vim plugin [UltiSnips](https://github.com/SirVer/ultisnips)

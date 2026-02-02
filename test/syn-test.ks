@@ -1,5 +1,6 @@
 // Kerboscript vim syntax test file
-// Program itself does not have any practical purpose
+// The program itself does not have any practical purpose
+// Do not try to run it
 
 //////////////////////////////////////////////////
 // Positive tests (SHOULD HIGHLIGHT)
@@ -14,33 +15,42 @@ set num to list(
 
 // Boolean constants
 // TODO: test
-declare global bool is true.
-local bool to false.
+declare global boolVar is true.
+local boolVar to false.
 RCS on.
 
 // Flow
-set x to choose 5 if bool else constant:Avogadro.
-set myValue to (x > 10 and x <= 99).
-if myValue or x = 10 {
-    print "x is a two digit number.".
-}
-else {
-    print "x is not".
+set x to 1.
+until 0 {
+    set x to x + 1.
+    if x > 10 { break. } // Exits the loop when
+                         // X is greater than 10
+    // An if-else ladder:
+    if x = 0 {
+        print "ZERO".
+    } else if x < 0 {
+        print "NEGATIVE".
+    } else {
+        print "POSITIVE".
+    }
+    set x to 1.
+
+    lock y to x + 2.
+    print y.         // Outputs 3
+    set x to 4.
+    print y.         // Outputs 6
 }
 
 wait until not core:messages:empty. // make sure we've received something
 set received to core:messages:pop.
 if received:content = "undock" {
     print "undocking!!!".
-        undock().
-} else {
-    print "unexpected message: " + received:content.
+    undock().
 }
 
 // Triggers
 when(alt:radar > 200) then {
     set nd to nextnode.
-
     setModen(nd).
 }.
 
@@ -120,6 +130,19 @@ if defined var1 {
 } else {
     print "var1 doesn't exist".
 }
+
+// GUI tests
+set g:skin:font to "PT Mono Bold".
+set g:skin:toggle:textcolor to rgb(1,1,1).
+set g:skin:toggle:on:textcolor to rgb(0.5,1,0).
+set g:skin:toggle:hover_on:textcolor to g:skin:toggle:on:textcolor.
+set g:skin:toggle:height to 20.
+set g:skin:button:textcolor to rgb(1,1,1).
+set g:skin:button:on:textcolor to rgb(0.5,1,0).
+set g:skin:popupmenu:textcolor to rgb(0.5,1,0).
+set g:skin:popupmenuitem:textcolor to rgb(1,1,1).
+set g:skin:textfield:textcolor to rgb(0.3,1,0).
+set style_label_compact:textcolor to rgb(1,1,1).
 
 //////////////////////////////////////////////////
 // Negative tests (SHOULD NOT HIGHLIGHT)

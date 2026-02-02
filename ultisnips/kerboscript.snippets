@@ -1,0 +1,89 @@
+snippet if "If branch"
+if ${1:condition} {
+	${2:body}
+}
+endsnippet
+
+snippet ife "If and Else branches"
+if ${1:condition} {
+	${2:body}
+} else {
+	${3:body}
+}
+endsnippet
+
+snippet else "Else branches"
+else {
+	${1:body}
+}
+endsnippet
+
+snippet set "Set statement"
+set ${1:suffix} to ${2:value}.
+endsnippet
+
+snippet until "Until loop"
+until ${1:condition} {
+	${2:body}
+}
+endsnippet
+
+snippet from "From loop"
+from {${1:initializer}} until ${2:condition} step {${3:increment}} do {
+	${4:body}
+}
+endsnippet
+
+snippet when "When trigger"
+when ${1:condition} then {
+	t${2:body}
+}
+endsnippet
+
+snippet on "On trigger"
+on ${1:condition} {
+	${2:body}
+}
+endsnippet
+
+snippet for "For loop"
+for ${2:element} in ${1:collection} {
+	${3:body}
+}
+endsnippet
+
+snippet log "Log to file"
+log ${1:value} to ${2:file}.
+endsnippet
+
+snippet list "Create list"
+list(${1:items})
+endsnippet
+
+snippet lex "Create lexicon"
+lexicon(${1:items})
+endsnippet
+
+snippet print "Print value"
+print(${1:value}).
+endsnippet
+
+snippet func "Function declaration"
+function ${1:name} {
+	${2:body}
+}
+endsnippet
+
+snippet funcScope "Function declaration with scope"
+${1|local,global|} function ${2:name} {
+	${3:body}
+}
+endsnippet
+
+snippet var "Variable declaration"
+${1|local,global|} ${2:name} is ${3:value}.
+endsnippet
+
+snippet lock "Lock statement"
+lock ${1:name} to ${2:expression}.
+endsnippet
